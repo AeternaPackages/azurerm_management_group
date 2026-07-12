@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.management_groups : {
       for k2, v2 in coalesce(v1.management_group_policy_assignments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        management_group_id = module.management_groups.management_groups["${k1}"].id
+        management_group_id = module.management_groups.management_groups_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.management_groups : {
       for k2, v2 in coalesce(v1.management_group_policy_exemptions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        management_group_id = module.management_groups.management_groups["${k1}"].id
+        management_group_id = module.management_groups.management_groups_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.management_groups : {
       for k2, v2 in coalesce(v1.management_group_policy_remediations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        management_group_id = module.management_groups.management_groups["${k1}"].id
+        management_group_id = module.management_groups.management_groups_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.management_groups : {
       for k2, v2 in coalesce(v1.management_group_policy_set_definitions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        management_group_id = module.management_groups.management_groups["${k1}"].id
+        management_group_id = module.management_groups.management_groups_id["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.management_groups : {
       for k2, v2 in coalesce(v1.management_group_subscription_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        management_group_id = module.management_groups.management_groups["${k1}"].id
+        management_group_id = module.management_groups.management_groups_id["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.management_groups : {
       for k2, v2 in coalesce(v1.management_group_template_deployments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        management_group_id = module.management_groups.management_groups["${k1}"].id
+        management_group_id = module.management_groups.management_groups_id["${k1}"]
       })
     }
   ]...)

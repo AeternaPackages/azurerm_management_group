@@ -88,26 +88,26 @@ EOT
         identity_ids = optional(set(string))
         type         = string
       }))
-      non_compliance_message = optional(object({
+      non_compliance_message = optional(list(object({
         content                        = string
         policy_definition_reference_id = optional(string)
-      }))
-      overrides = optional(object({
-        selectors = optional(object({
+      })))
+      overrides = optional(list(object({
+        selectors = optional(list(object({
           in     = optional(list(string))
           kind   = optional(string) # Default: "policyDefinitionReferenceId"
           not_in = optional(list(string))
-        }))
+        })))
         value = string
-      }))
-      resource_selectors = optional(object({
+      })))
+      resource_selectors = optional(list(object({
         name = optional(string)
-        selectors = object({
+        selectors = list(object({
           in     = optional(list(string))
           kind   = string
           not_in = optional(list(string))
-        })
-      }))
+        }))
+      })))
     })))
     management_group_policy_exemptions = optional(map(object({
       exemption_category              = string
@@ -135,20 +135,20 @@ EOT
       description  = optional(string)
       metadata     = optional(string)
       parameters   = optional(string)
-      policy_definition_reference = object({
+      policy_definition_reference = list(object({
         parameter_values     = optional(string)
         policy_definition_id = string
         policy_group_names   = optional(set(string))
         reference_id         = optional(string)
         version              = optional(string)
-      })
-      policy_definition_group = optional(object({
+      }))
+      policy_definition_group = optional(list(object({
         additional_metadata_resource_id = optional(string)
         category                        = optional(string)
         description                     = optional(string)
         display_name                    = optional(string)
         name                            = string
-      }))
+      })))
     })))
     management_group_subscription_associations = optional(map(object({
       subscription_id = string

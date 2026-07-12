@@ -1,4 +1,9 @@
 # --- azurerm_management_group ---
+output "management_groups_id" {
+  description = "Map of id values across all management_groups, keyed the same as var.management_groups"
+  value       = module.management_groups.management_groups_id
+}
+
 output "management_groups_display_name" {
   description = "Map of display_name values across all management_groups, keyed the same as var.management_groups"
   value       = module.management_groups.management_groups_display_name
@@ -25,6 +30,11 @@ output "management_groups_tenant_scoped_id" {
 }
 
 # --- azurerm_management_group_policy_assignment ---
+output "management_group_policy_assignments_id" {
+  description = "Map of id values across all management_group_policy_assignments, keyed the same as var.management_group_policy_assignments"
+  value       = module.management_group_policy_assignments.management_group_policy_assignments_id
+}
+
 output "management_group_policy_assignments_description" {
   description = "Map of description values across all management_group_policy_assignments, keyed the same as var.management_group_policy_assignments"
   value       = module.management_group_policy_assignments.management_group_policy_assignments_description
@@ -96,6 +106,11 @@ output "management_group_policy_assignments_resource_selectors" {
 }
 
 # --- azurerm_management_group_policy_exemption ---
+output "management_group_policy_exemptions_id" {
+  description = "Map of id values across all management_group_policy_exemptions, keyed the same as var.management_group_policy_exemptions"
+  value       = module.management_group_policy_exemptions.management_group_policy_exemptions_id
+}
+
 output "management_group_policy_exemptions_description" {
   description = "Map of description values across all management_group_policy_exemptions, keyed the same as var.management_group_policy_exemptions"
   value       = module.management_group_policy_exemptions.management_group_policy_exemptions_description
@@ -142,6 +157,11 @@ output "management_group_policy_exemptions_policy_definition_reference_ids" {
 }
 
 # --- azurerm_management_group_policy_remediation ---
+output "management_group_policy_remediations_id" {
+  description = "Map of id values across all management_group_policy_remediations, keyed the same as var.management_group_policy_remediations"
+  value       = module.management_group_policy_remediations.management_group_policy_remediations_id
+}
+
 output "management_group_policy_remediations_failure_percentage" {
   description = "Map of failure_percentage values across all management_group_policy_remediations, keyed the same as var.management_group_policy_remediations"
   value       = module.management_group_policy_remediations.management_group_policy_remediations_failure_percentage
@@ -183,6 +203,11 @@ output "management_group_policy_remediations_resource_count" {
 }
 
 # --- azurerm_management_group_policy_set_definition ---
+output "management_group_policy_set_definitions_id" {
+  description = "Map of id values across all management_group_policy_set_definitions, keyed the same as var.management_group_policy_set_definitions"
+  value       = module.management_group_policy_set_definitions.management_group_policy_set_definitions_id
+}
+
 output "management_group_policy_set_definitions_description" {
   description = "Map of description values across all management_group_policy_set_definitions, keyed the same as var.management_group_policy_set_definitions"
   value       = module.management_group_policy_set_definitions.management_group_policy_set_definitions_description
@@ -229,6 +254,11 @@ output "management_group_policy_set_definitions_policy_type" {
 }
 
 # --- azurerm_management_group_subscription_association ---
+output "management_group_subscription_associations_id" {
+  description = "Map of id values across all management_group_subscription_associations, keyed the same as var.management_group_subscription_associations"
+  value       = module.management_group_subscription_associations.management_group_subscription_associations_id
+}
+
 output "management_group_subscription_associations_management_group_id" {
   description = "Map of management_group_id values across all management_group_subscription_associations, keyed the same as var.management_group_subscription_associations"
   value       = module.management_group_subscription_associations.management_group_subscription_associations_management_group_id
@@ -240,6 +270,11 @@ output "management_group_subscription_associations_subscription_id" {
 }
 
 # --- azurerm_management_group_template_deployment ---
+output "management_group_template_deployments_id" {
+  description = "Map of id values across all management_group_template_deployments, keyed the same as var.management_group_template_deployments"
+  value       = module.management_group_template_deployments.management_group_template_deployments_id
+}
+
 output "management_group_template_deployments_debug_level" {
   description = "Map of debug_level values across all management_group_template_deployments, keyed the same as var.management_group_template_deployments"
   value       = module.management_group_template_deployments.management_group_template_deployments_debug_level

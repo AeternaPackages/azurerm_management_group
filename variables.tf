@@ -79,7 +79,7 @@ EOT
       policy_definition_id = string
       description          = optional(string)
       display_name         = optional(string)
-      enforce              = optional(bool) # Default: true
+      enforce              = optional(bool)
       location             = optional(string)
       metadata             = optional(string)
       not_scopes           = optional(list(string))
@@ -95,7 +95,7 @@ EOT
       overrides = optional(list(object({
         selectors = optional(list(object({
           in     = optional(list(string))
-          kind   = optional(string) # Default: "policyDefinitionReferenceId"
+          kind   = optional(string)
           not_in = optional(list(string))
         })))
         value = string

@@ -57,42 +57,42 @@ locals {
 }
 
 module "management_groups" {
-  source            = "git::https://github.com/AeternaModules/azurerm_management_group.git?ref=v4.80.0"
+  source            = "git::https://github.com/AeternaModules/azurerm_management_group.git?ref=v4.81.0"
   management_groups = local.management_groups
 }
 
 module "management_group_policy_assignments" {
-  source                              = "git::https://github.com/AeternaModules/azurerm_management_group_policy_assignment.git?ref=v4.80.0"
+  source                              = "git::https://github.com/AeternaModules/azurerm_management_group_policy_assignment.git?ref=v4.81.0"
   management_group_policy_assignments = local.management_group_policy_assignments
   depends_on                          = [module.management_groups]
 }
 
 module "management_group_policy_exemptions" {
-  source                             = "git::https://github.com/AeternaModules/azurerm_management_group_policy_exemption.git?ref=v4.80.0"
+  source                             = "git::https://github.com/AeternaModules/azurerm_management_group_policy_exemption.git?ref=v4.81.0"
   management_group_policy_exemptions = local.management_group_policy_exemptions
   depends_on                         = [module.management_groups]
 }
 
 module "management_group_policy_remediations" {
-  source                               = "git::https://github.com/AeternaModules/azurerm_management_group_policy_remediation.git?ref=v4.80.0"
+  source                               = "git::https://github.com/AeternaModules/azurerm_management_group_policy_remediation.git?ref=v4.81.0"
   management_group_policy_remediations = local.management_group_policy_remediations
   depends_on                           = [module.management_groups]
 }
 
 module "management_group_policy_set_definitions" {
-  source                                  = "git::https://github.com/AeternaModules/azurerm_management_group_policy_set_definition.git?ref=v4.80.0"
+  source                                  = "git::https://github.com/AeternaModules/azurerm_management_group_policy_set_definition.git?ref=v4.81.0"
   management_group_policy_set_definitions = local.management_group_policy_set_definitions
   depends_on                              = [module.management_groups]
 }
 
 module "management_group_subscription_associations" {
-  source                                     = "git::https://github.com/AeternaModules/azurerm_management_group_subscription_association.git?ref=v4.80.0"
+  source                                     = "git::https://github.com/AeternaModules/azurerm_management_group_subscription_association.git?ref=v4.81.0"
   management_group_subscription_associations = local.management_group_subscription_associations
   depends_on                                 = [module.management_groups]
 }
 
 module "management_group_template_deployments" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_management_group_template_deployment.git?ref=v4.80.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_management_group_template_deployment.git?ref=v4.81.0"
   management_group_template_deployments = local.management_group_template_deployments
   depends_on                            = [module.management_groups]
 }
